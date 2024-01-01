@@ -5,9 +5,32 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: linear-gradient(275deg, #0062ff, #da61ff); */
+  background-image: url('https://media.istockphoto.com/id/1331493599/photo/shot-of-a-businessman-using-a-computer-while-working-in-a-call-center.jpg?s=612x612&w=0&k=20&c=ocaFzVRnDARFnANjyd6CMrwAI0Ua6I0Na_MKej8IysA=');
+  background-repeat: no-repeat;
+  background-size:cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+#loginform{
+  margin-left: 250px;
+  margin-top: 100px;
+}
+#registerform{
+  margin-left: 250px;
+  margin-top: 100px;
+}
+#navbarNav{
+  display: flex;
+  justify-content: space-around;
+}
+#managerspan{
+  color: white;
+  font-size: 20px;
+  position: relative;
+  margin-left: 15px;
+  top: -15px;
 }

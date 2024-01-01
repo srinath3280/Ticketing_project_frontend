@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { Outlet, useNavigate } from 'react-router-dom';
 import './App.css';
 
 function App() {
+  var u = JSON.parse(window.localStorage.getItem("user"));
+  var navigate = useNavigate();
+  function logout(){
+    window.localStorage.removeItem("user");
+    navigate(`/`)
+  }
+  function register(){
+    navigate(`/register`)
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <nav class="navbar navbar-expand-lg bg-danger mb-5">
+        <div class="container-fluid">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <h3 className="app-h1">Customer Help Desk {window.localStorage.getItem("user")?(('|| Hello..! ')+u.fullname):null}</h3>
+            <div>
+              <button class='me-2' id="log-btn" onClick={()=>logout()}>{window.localStorage.getItem("user")?"Logout":"Login"}</button>
+              {
+                !window.localStorage.getItem("user")? <button id="log-btn" onClick={()=>register()}>Register</button>:null
+              }
+            </div>
+          </div>
+        </div>
+      </nav>
+      <Outlet/>
     </div>
   );
 }
